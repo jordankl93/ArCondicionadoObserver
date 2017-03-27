@@ -17,6 +17,12 @@ public class SensorPessoa extends Observable{
     public SensorPessoa() {
         this.qtdPessoa = 0;
     }
+    
+    public void setQtdPessoa(int qtdPessoas){
+        this.qtdPessoa = qtdPessoas;
+        setChanged();
+        notifyObservers();
+    }
 
     public int getQtdPessoa() {
         return qtdPessoa;

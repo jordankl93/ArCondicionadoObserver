@@ -17,12 +17,12 @@ public class ArCondicionado implements Observer {
     public static final double TEMPERATURA_MEDIA = 25;
     private static double temperaturaExternaTotal = 0;
     private static int qtdPessoasTotal = 0;
+    private static double temperaturaSala = 0;
 
     @Override
     public void update(Observable obs, Object obj) {
         SensorPessoa sensorPessoa;
-        SensorTemp sensorTemperatura;   
-        double temperaturaSala;
+        SensorTemp sensorTemperatura;
 
         if (obs instanceof SensorPessoa) {
             sensorPessoa = (SensorPessoa) obs;            
@@ -36,5 +36,9 @@ public class ArCondicionado implements Observer {
         
         Relatorio.relatorio(temperaturaSala, temperaturaExternaTotal, qtdPessoasTotal);
     }
+
+    public static double getTemperaturaSala() {
+        return temperaturaSala;
+    }   
 
 }

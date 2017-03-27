@@ -19,12 +19,16 @@ public class Relatorio {
         System.out.println("    - Temperatura na sala = " + tempSala);
         System.out.println("");
 
-        System.out.println("Abaixando a temparatura em " + (tempSala - 25) + " graus!");
+        System.out.println("Abaixando a temparatura em " + getRegulagem(tempSala) + " graus!");
         try {
-            Thread.sleep(5000);
+            Thread.sleep(2000);
         } catch (Exception ex) {
         }
         System.out.println("Temperatura Atualizada!");
     }
+    
+    public static double getRegulagem(double tempSala){
+        return tempSala - 25;
+    } 
 
 }
